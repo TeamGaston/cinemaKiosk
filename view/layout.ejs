@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <!-- icon -->
     <script src="https://kit.fontawesome.com/611c1b2c45.js" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="style/layout.css">
 </head>
 
@@ -19,8 +19,10 @@
     <div class="wrap">
         <!-- 여기에서 콘텐츠가 삽입됩니다. -->
         <%- include(content) %>
-        <%- include(downBar) %>
-        
+        <% if (typeof downBar !== 'undefined') { %>
+            <%- include(downBar) %>
+        <% } %>
+
     </div>
 </body>
 
