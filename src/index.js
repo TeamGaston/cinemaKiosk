@@ -9,11 +9,7 @@ app.set("view engine", "ejs");
 app.set("views", "view");
 
 app.get("/", (req, res) => {
-    res.render( "layout", { content: "selectMovie_hour", downBar: "bottomBarFrame" } );
-});
-
-app.get("/abc", (req, res) => {
-    res.render( "layout", { content: "selectMovie_hour" } );
+    res.render( "layout", { content: "selectMovie_hour", popup: "earnPointPopup" ,downBar: "bottomBarFrame" } );
 });
 
 app.listen( 3000, () => {

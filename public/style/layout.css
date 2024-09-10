@@ -16,6 +16,8 @@
             flex-direction: column;
             justify-content: flex-end;
             display: flex;
+
+            position: relative;
         }
 
         /* 하단바 영역 */
