@@ -1,8 +1,11 @@
 <link rel="stylesheet" href="style/main.css">
-<div id="buyTicketArea" class="mainWrapper">
-    <button id="buyTicketBtn">티켓 구매</button>
-</div>
-<div id="printResevedTicketArea" class="mainWrapper">
-    <input class="displayKeypad" readonly>
-    <%- include("keypadFrame") %>
+<div class="main">
+    <div id="buyTicketArea" class="mainWrapper">
+        <button id="buyTicketBtn" class="buyTicketBtn">티켓 구매</button>
+    </div>
+    <div id="printResevedTicketArea" class="mainWrapper">
+        <h2 class="printResevedTicketMessage">예매 티켓 출력</h2>
+        <input class="displayKeypad" placeholder="010-1234-5678" readonly>
+        <%- include("keypadFrame") %>
+    </div>
 </div>
