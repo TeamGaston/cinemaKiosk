@@ -17,16 +17,18 @@
 
 <body>
     <div class="wrap">
-        <!-- 여기에서 콘텐츠가 삽입됩니다. -->
-        <%- include(content) %>
+        <section class="layoutArea">
+            <!-- 여기에서 콘텐츠가 삽입됩니다. -->
+            <%- include(content) %>
 
-        <% if ( typeof popup !== "undefined" ) { %>
-            <%- include( popup ) %>
-        <% } %>
-
-        <% if ( typeof downBar !== "undefined" ) { %>
+            <% if ( typeof popup !=="undefined" ) { %>
+                <%- include( popup ) %>
+            <% } %>
+        </section>
+        
+        <% if ( typeof downBar !=="undefined" ) { %>
             <%- include( downBar ) %>
-        <% } %>
+                <% } %>
 
     </div>
 </body>

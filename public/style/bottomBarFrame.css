@@ -1,56 +1,60 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Nanum Gothic", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 10px;
-}
-
-.wrap {
-    width: 128rem;
-    height: 72rem;
-    background: #3b3b3b;
-    margin: 0 auto;
-    flex-direction: column;
-    justify-content: flex-end;
-    display: flex;
-}
-
 /* 하단바 영역 */
-.downBar {
+.bottomBar {
     width: 100%;
-    height: 6rem;
+    height: 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #515151;
-    padding: 0 5rem; 
+    padding: 0 5rem;
 }
 
 .barButtonsArea {
     display: flex;
-    gap: 2rem;
+    gap: 1.7rem;
 }
 
 .barButtons {
-    width: 6.5rem;
+    width: 7.5rem;
     height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.3rem;
-    background-color: #E6E6E6;
-    padding: 0.5rem;
+    background: e6e6e6;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid #d1d1d1;
+}
+
+.barButtons:hover {
+    background: #f2f2f2;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(22, 22, 22, 0.3);
+}
+
+.bottomBarIcon {
+    font-size: 1.7rem;
 }
 
 .logoImg {
-    margin-right: 16.5rem;
+    height: 3rem;
     margin-top: -1rem;
+    margin-right: 16.5rem;
 }
 
-.timeArea {
-    font-size: 1.4rem;
+.clockArea {
     color: #E6E6E6;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
+}
+
+.timeDisplay {
+    font-size: 1.7rem;
+    margin-left: 0.6rem;
+    font-weight: 500;
+}
+
+.staffCallButton {
+    font-weight: 700;
+    font-size: 1.3rem;
 }
