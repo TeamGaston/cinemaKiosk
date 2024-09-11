@@ -10,5 +10,6 @@ Cinema Kiosk는 영화관 키오스크 시스템을 웹 기반으로 구현한 �
   - **`images/`**: 이미지 파일
 
 - **`src/`**: Back-end 코드
+  - `components`**: 코드의 대부분은 여기에
 
 - **`views/`**: 서버 측 템플릿 파일 (EJS 사용)
