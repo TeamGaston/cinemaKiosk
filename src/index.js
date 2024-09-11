@@ -8,8 +8,9 @@ app.use( express.static("public") );
 app.set("view engine", "ejs");
 app.set("views", "view");
 
+// data = { content: "파일", popup: "popup/파일" ,downBar: "파일" }
 app.get("/", (req, res) => {
-    res.render( "layout", { content: "selectMovie_hour", popup: "popup/completePaymentPopup" ,downBar: "bottomBarFrame" } );
+    res.render( "layout", { content: "main", popup: "popup/earnPointPopup" ,downBar: "bottomBarFrame" } );
 });
 
 app.listen( 3000, () => {
