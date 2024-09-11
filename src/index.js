@@ -17,7 +17,7 @@ import touch from "./components/touch.js";
 import home from "./components/home.js";
 import choice from "./components/choice.js";
 
-// data = { content: "파일", popup: "popup/파일" , bottomBar: "bottomBarFrame" }
+// data = { content: "파일", popup: "popup/파일" , bottomBar: "denominator/bottomBarFrame" }
 const main = (() => {
     touch( app );
     home( app );
