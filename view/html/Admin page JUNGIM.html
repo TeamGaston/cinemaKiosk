@@ -39,6 +39,7 @@
         .smallBtn:hover {
             background-color: #ababab;
         }
+
         /* === 날짜 표시 영역 === */
         .dateArea {
             display: inline-block;
@@ -47,21 +48,25 @@
             left: 50%;
             margin-left: -15rem;
         }
+
         /* === 일 매출 날짜 표시 영역 === */
         .today {
             color: white;
             margin: 2rem;
             border-radius: 5px;
         }
+
         .todayDay {
             font-size: 5rem;
             font-weight: bold;
         }
+
         .todayMonth,
         .todayYear {
             font-size: 3rem;
             margin-left: 0;
         }
+
         /* === 월 매출 날짜 표시 영역 === */
         .month {
             color: white;
@@ -79,14 +84,15 @@
             font-size: 3rem;
             margin-left: 0;
         }
+
         /* === 매출 순위 날짜 표시 영역 === */
-        .ranking{
+        .ranking {
             color: white;
-                margin: 2rem;
-                border-radius: 5px;
-                margin-left: 5rem;
-                font-size: 5rem;
-                font-weight: bold;
+            margin: 2rem;
+            border-radius: 5px;
+            margin-left: 5rem;
+            font-size: 5rem;
+            font-weight: bold;
         }
 
         /* === 왼쪽 박스 부분 === */
@@ -96,6 +102,7 @@
             color: white;
             padding: 3rem;
         }
+
         /* === 매출액 표시 영역 === */
         .salesAmount {
             font-size: 3rem;
@@ -105,6 +112,7 @@
             padding: 3rem;
             border-radius: 5px;
         }
+
         /* === 판매 수량 표시 영역 === */
         .salesQuantity {
             border-radius: 5px;
@@ -114,6 +122,7 @@
             height: 18rem;
             border: #ADADAD 1px solid;
         }
+
         /* === 매출액 인풋 영역 === */
         .salesInput {
             position: relative;
@@ -127,16 +136,19 @@
             outline: none;
             text-align: right;
         }
+
         /* === 판매 수량 인풋 영역 === */
         .salesAmountInput {
             margin-left: 3.5rem;
         }
+
         /* === 인풋박스 초기화 영역 === */
         input[type=number]::-webkit-inner-spin-button,
         input[type=number]::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
+
         /* === 오른쪽 박스 부분 === */
         .salesProductBox {
             position: relative;
@@ -148,39 +160,46 @@
             border-radius: 5px;
             top: -0.7rem;
         }
+
         /* === 영화제목 글씨 영역 ===*/
         .salesProductName {
             margin-left: 15%;
             font-size: 2.5rem;
         }
+
         /* === 수량 글씨 영역 === */
         .salesProductCount {
             margin-left: 40%;
             font-size: 2.5rem;
         }
+
         /* === 오른쪽 박스 영역 나누기 위해 플렉스 하는 영역 === */
         .salesProductInfoBox {
             display: flex;
             height: 33rem;
             border-top: 1px solid #ADADAD;
         }
+
         /* === 영화제목 차곡차곡 쌓이는 박스 영역 === */
         .salesProductNameInfo {
             width: 70%;
             height: 100%;
         }
+
         /* === 수량 차곡차곡 쌓이는 박스 영역 === */
         .salesProductCountInfo {
             width: 30%;
             height: 100%;
             border-left: #ADADAD 1px solid;
         }
+
         /* === 영화제목과 수량의 폰트 사이즈 설정 영역 === */
         .salesProductInfo {
             font-size: 2rem;
         }
+
         /* === 매출순위 영역 === */
-        .rankingSales{
+        .rankingSales {
             position: relative;
             border: 1px solid #ADADAD;
             width: 80%;
@@ -188,52 +207,65 @@
             border-radius: 5px;
             margin-left: 13rem;
         }
-        .rankingSalesProductBox{
+
+        .rankingSalesProductBox {
             height: 36rem;
         }
-        .rankingSalesProduct{
+
+        .rankingSalesProduct {
             font-size: 2.5rem;
             border-bottom: 1px solid #ababab;
             color: white;
         }
-        .rankingSalesProductRanking{
+
+        .rankingSalesProductRanking {
             font-size: 2.5rem;
             margin-left: 5rem;
         }
-        .rankingSalesProductName{
+
+        .rankingSalesProductName {
             font-size: 2.5rem;
             margin-left: 25rem;
             /* margin-left: 30%; */
         }
-        .rankingSalesProductCount{
+
+        .rankingSalesProductCount {
             font-size: 2.5rem;
             margin-left: 26rem;
         }
-        .rankingSalesProductHowmuch{
+
+        .rankingSalesProductHowmuch {
             font-size: 2.5rem;
             margin-left: 12rem;
         }
-        .rankingSalesProductInfoBox{
+
+        .rankingSalesProductInfoBox {
             display: flex;
         }
-        .rankingSalesProductInfo{
+
+        .rankingSalesProductInfo {
             font-size: 2rem;
             color: white;
             text-align: center;
-            
+
         }
-        .rankingSalesProductRankingInfo{
+
+        .rankingSalesProductRankingInfo {
             width: 15%;
         }
-        .rankingSalesProductNameInfo{
+
+        .rankingSalesProductNameInfo {
             width: 50%;
         }
-        .rankingSalesProductCountInfo{
+
+        .rankingSalesProductCountInfo {
             width: 15%;
         }
-        .rankingSalesProductHowmuchInfo{
+
+        .rankingSalesProductHowmuchInfo {
             width: 20%;
         }
+
         /* 맨 처음 초기 화면으로 표시를 하기 위한 설정 */
         .monthSales {
             display: none;
@@ -275,11 +307,11 @@
                     <section class="sales">
                         <section class="salesAmount">
                             매출액
-                            <input type="number" class="salesInput salesAmountInput">
+                            <input type="text" class="salesInput salesAmountInput" value="70,000 원" readonly>
                         </section>
                         <section class="salesQuantity">
                             판매 수량
-                            <input type="number" class="salesInput salesQuantityInput">
+                            <input type="text" class="salesInput salesQuantityInput" value="10 건" readonly>
                         </section>
                         <section class="salesProductBox">
                             <div class="salesProduct">
@@ -346,7 +378,7 @@
                                     1위
                                 </div>
                                 <div class="rankingSalesProductInfo rankingSalesProductNameInfo">
-                                    안녕하세요 저는 관리자,,,
+                                    베테랑2
                                 </div>
                                 <div class="rankingSalesProductInfo rankingSalesProductCountInfo">
                                     30
@@ -355,6 +387,7 @@
                                     100,405
                                 </div>
                             </div>
+                            
                         </section>
                     </section>
                 </section>
