@@ -17,7 +17,7 @@ toggle_time.addEventListener("click", ()=>{ // 시간별 선택 누를 때
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { // 토글 색상 변경
     const url = new URL(window.location.href);
     console.log( url.pathname );
 
