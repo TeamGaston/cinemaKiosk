@@ -278,17 +278,15 @@
           }
         }
         applyIdToElement(domElement);
-        const { toggleGroup } = domElement;
-        this.setToggleState(toggleGroup, domElement);
+        this.setToggleState(domElement);
       }//
-
-      setToggleState(toggleGroup, domElement) {
+      setToggleState(domElement) {
+        const { toggleGroup } = domElement;
         toggleGroup.addEventListener("click", (event) => {
           const eventId = event.target.id;
           this.processSelectionChange(eventId, domElement);
         })
       }//
-
       processSelectionChange(eventId, domElement) {
         const { movieSelectionStatus, timeSelectionStatus, posterGallery, scheduleGalleryWrap } = domElement;
         const selectionStatus = (activate, deactivate) => {
@@ -309,8 +307,7 @@
             posterGallery.style.display = "none";
             scheduleGalleryWrap.style.display = "block";
         }
-      }
-
+      }//
       control() {
         this.setElementId();
       }//
@@ -318,9 +315,6 @@
 
     const selectionSwitcher = new SelectionSwitcher('selectionSwitcher');
     selectionSwitcher.control();
-
-
-
 
   </script>
 </body>
