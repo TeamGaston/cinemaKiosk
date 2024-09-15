@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="style.css">
     <title>seat_selectionD</title>
     <style>
-
-        .layoutArea{
+        .layoutArea {
             display: flex;
             align-items: center;
             flex-direction: column;
         }
+
         .sectionTop {
             margin-top: 8rem;
             width: 100%;
@@ -32,25 +32,56 @@
 
         .ticketCountArea {
             width: 60rem;
+            height: 6rem;
+            color: #E0E0E0;
+            font-size: 2.4rem;
+            line-height: 6rem;
+            text-align: center;
+            background-color: #3B3B44;
+            border-radius: .5rem;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .ticketCountArea button {
+            font-size: 2.4rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: #4A4A5A;
+            border: none;
+            border-radius: 0.5rem;
+            color: #E0E0E0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .ticketCountArea button:hover {
+            background-color: #6A6A7A;
+        }
+
+        /* .ticketCountArea {
+            width: 60rem;
             height: 5.5rem;
             color: white;
             font-size: 2.4rem;
             line-height: 5.5rem;
             text-align: center;
             margin: 0 2rem 0 2rem;
-        }
+        }*/
 
         .ticketCountArea span {
             font-size: 2.4rem;
             margin: 0 0.5rem 0 0.5rem;
         }
 
-        .ticketCountArea button {
+        /* .ticketCountArea button {
             font-size: 2.4rem;
             margin: 0 0.5rem 0 0.5rem;
             width: 4rem;
             height: 4rem;
-        }
+        }  */
 
         .sectionMiddle {
             width: 60rem;
@@ -70,6 +101,7 @@
             background-color: #939393;
             text-align: center;
             letter-spacing: .5rem;
+            border-radius: 0.2rem;
         }
 
         .sectionBottom {
@@ -117,7 +149,7 @@
         }
 
         /* 선택되지 않은 좌석 */
-        label{
+        label {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -134,13 +166,40 @@
             background-color: #ff9933;
         }
 
-        .chosenBtn{
+        /* .chosenBtn{
             position: absolute;
             left : 90%;
             bottom: 4%;
             width: 8rem;
             height: 4.5rem;
             font-size: 1.6rem;
+        } */
+        .chosenBtn {
+            position: absolute;
+            left: 90%;
+            bottom: 4%;
+            width: 8rem;
+            height: 4.5rem;
+            font-size: 1.6rem;
+            background-color: #3B3B44;
+            color: #F0F0F0;
+            cursor: pointer;
+
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .chosenBtn:hover {
+            background-color: #4A4A5A;
+            transform: scale(1.05);
+        }
+
+        .chosenBtn:active {
+            background-color: #2F2F3B;
+            transform: scale(0.98);
         }
     </style>
 </head>
@@ -167,7 +226,7 @@
 
             <section class="sectionBottom">
                 <div class="seatsArea">
-                    
+
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat1">A1</label>
 
@@ -180,7 +239,7 @@
 
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat4">A4</label>
-                    
+
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat5">A5</label>
 
@@ -193,7 +252,7 @@
 
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat8">A8</label>
-                    
+
 
                 </div>
                 <div class="seatsArea">
@@ -209,7 +268,7 @@
 
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat4">4</label>
-                    
+
 
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat5">5</label>
@@ -238,7 +297,7 @@
 
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat4">4</label>
-                    
+
 
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat5">5</label>
@@ -267,7 +326,7 @@
 
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat4">4</label>
-                    
+
 
                     <input type="checkbox" class="seat-checkbox">
                     <label for="seat5">5</label>
@@ -315,10 +374,10 @@
             </section>
             <!-- ===사이드바 영역=== -->
             <section class="progressSidebar">
-                <div class="progressSettings completedStep"><span class="stepLabel">영화 선택</span></div>
-                <div class="progressSettings completedStep"><span class="stepLabel">시간 선택</span></div>
-                <div class="progressSettings completedStep"><span class="stepLabel">좌석 선택</span></div>
-                <div class="progressSettings remainingStep"><span class="stepLabel">결제</span></div>
+                <div class="progressSettings completedStep"><span class="stepLabel">영화<br>선택</span></div>
+                <div class="progressSettings remainingStep"><span class="stepLabel">시간<br>선택</span></div>
+                <div class="progressSettings remainingStep"><span class="stepLabel">좌석<br>선택</span></div>
+                <div class="progressSettings remainingStep paymentStep"><span class="stepLabel">결제</span></div>
             </section>
         </section>
         <!-- ===하단바 영역=== -->
