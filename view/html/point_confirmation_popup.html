@@ -58,8 +58,17 @@
     }
 
     /* 키패드 영역 */
+
+    .enterPointsLabel{
+        color: #fff;
+        font-size: 1.9rem;
+        margin-top: 5.5rem;
+        letter-spacing: 1px;
+    }
+
+
     .keypadArea {
-        margin-top: 8rem;
+        margin-top: 3rem;
     }
 
     /* 포인트를 얼만큼 사용 하실 건가요?  를 넣는 박스*/
@@ -99,7 +108,7 @@
             <!-- ===팝업 영역=== -->
             <section class="popupArea">
                 <article class="popupBar">
-                    <p class="popupTitle popupBarTextCommon">사용하실 포인트를 입력해주세요.</p>
+                    <p class="popupTitle popupBarTextCommon">포인트 입력 요청</p>
                     <i class="popupBarTextCommon fa-solid fa-x"></i>
                 </article>
                 <section class="popupContent">
@@ -114,6 +123,7 @@
                                         class="inputTextArea"> </span></div>
                         </section>
                         <section class="pointinputArea">
+                            <p class="enterPointsLabel">사용하실 포인트를 입력하세요.</p>
                             <section class="keypadArea">
                                 <div type="number" class="pointText"></div>
                                 <button class="key">1</button>

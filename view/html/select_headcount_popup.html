@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="style.css">
     <title>select_headcount_popup</title>
     <style>
+
+        .popupContent{
+            text-align: center;
+        }
         /* 숫자 카운트 박스 공통된 부분  */
         .selectPeople {
             width: 65%;
@@ -28,13 +32,10 @@
 
         /* 확인 버튼 스타일 */
         .selectPeopleBtn {
-            position: relative;
-            top: 13%;
-            left: 47%;
-            height: 3.5rem;
-            width: 8rem;
+            height: 4rem;
+            width: 11rem;
             font-size: 1.6rem;
-            margin-top: 2rem;
+            margin-top: 10rem;
             background-color: #DE1E2D;
             color: #ffffff;
             border: none;
@@ -42,16 +43,16 @@
             font-size: 1.6rem;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background-color 0.2s, box-shadow 0.2s;
         }
 
         .selectPeopleBtn:hover {
-            background-color: #c82333;
+            background-color: #b41c2b;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .selectPeopleBtn:active {
-            background-color: #a71d2a;
+            background-color: #b41c2b;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
@@ -60,14 +61,10 @@
             text-align: center;
             line-height: 5rem;
             font-size: 1.5rem;
-            /* width: 7rem; */
             background-color: #1F1F2F;
-            /* 배경색을 더 밝은 색상으로 변경 */
             width: 7rem;
             color: #FFFFFF;
-            /* 글자 색상 변경 */
             border-radius: 0.5rem;
-            /* 둥근 모서리 추가 */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             font-weight: bold;
         }
@@ -77,12 +74,10 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            /* 자식 요소들 사이에 간격을 고르게 배치 */
         }
 
         .number-selection input[type="radio"] {
             display: none;
-            /* 라디오 버튼 자체는 보이지 않게 숨김 */
         }
 
         .number-selection label {
@@ -99,10 +94,10 @@
             background-color: #2A2A2A;
             color: #FFFFFF;
             border-radius: 0.5rem;
-            transition: background-color 0.3s, border-color 0.3s;
+            transition: background-color 0.1s, border-color 0.1s;
         }
         .number-selection label:hover {
-            background-color: #1F1F1F; /* 호버 시 배경색 변경 */
+            background-color: #1F1F1F;
             border-color: #FFDD00;
         }
         /* 라디오 버튼이 체크되었을 때 해당 라벨의 스타일을 변경 */
@@ -121,7 +116,7 @@
             <!-- ===사이드바 영역=== -->
             <section class="progressSidebar">
                 <div class="progressSettings completedStep"><span class="stepLabel">영화<br>선택</span></div>
-                <div class="progressSettings remainingStep"><span class="stepLabel">시간<br>선택</span></div>
+                <div class="progressSettings completedStep"><span class="stepLabel">시간<br>선택</span></div>
                 <div class="progressSettings remainingStep"><span class="stepLabel">좌석<br>선택</span></div>
                 <div class="progressSettings remainingStep paymentStep"><span class="stepLabel">결제</span></div>
             </section>

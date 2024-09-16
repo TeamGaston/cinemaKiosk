@@ -67,6 +67,8 @@
       left: 0;
       top: 0;
       cursor: pointer;
+      background: transparent;
+      z-index: 999;
     }
   </style>
 </head>
@@ -95,19 +97,9 @@
     <!-- #터치영역# -->
     <section id="touchScreen" class="touchScreenArea"></section>
   </div>
+
   <!-- ==script== -->
   <script>
-
-    const updateClock = () => {
-      const time = new Date();
-      const [hour, minute] = [time.getHours().toString().padStart(2, "0"), time.getMinutes().toString().padStart(2, "0")];
-      clock.innerText = `${hour}:${minute}`;
-    }
-
-    updateClock();
-    setInterval(() => {
-      updateClock();
-    }, 5000);
 
   </script>
 </body>

@@ -19,9 +19,8 @@
             /* border: 1px solid red; */
             height: 100%;
             width: 90rem;
-            /* text-align: center; */
             margin-left: 19rem;
-            padding-top: 7rem
+            padding-top: 7.5rem
         }
 
         .headArea {
@@ -32,36 +31,43 @@
         .poster {
             width: 28rem;
             height: 42rem;
-            /*border: 1px solid blue; */
             background-image: url("images/베테랑.png");
             background-size: cover;
             margin-left: 8.5rem;
         }
 
         /* 정보영역 */
+        .movieInformation{
+            margin-top: 0.7rem;
+        }
         .movieTitle {
-            margin: .5rem 6rem;
+            margin: 1rem 6rem;
             font-size: 2.4rem;
-            color: #D9D9D9;
+            padding-bottom: 2rem;
+            color: #ffffff;
         }
 
         .listArea {
             list-style: none;
-            /*border: 1px solid salmon;  */
-            margin-top: 3.2rem;
         }
 
         .informationList {
             width: 40rem;
             height: 5.5rem;
             font-size: 1.6rem;
-            color: #D9D9D9;
+            color: #b4b4b4;
             border-bottom: 1px solid white;
-            margin: 2rem 6rem;
+            margin: 1rem 6rem;
+            /* border: 1px solid red; */
+            line-height: 5.5rem;
+        }
+
+        .informationDetail{
+            font-size: 1.6rem;
+            color: #eeeeee;
         }
 
         .submitArea {
-            /* border: 1px solid powderblue; */
             margin-top: 4.7rem;
             text-align: center;
         }
@@ -81,13 +87,12 @@
         }
 
         .submitButton:hover {
-            background-color: #C8102E;
-            transform: scale(1.02);
+            background-color: #A8001E;
         }
 
         .submitButton:active {
-            background-color: #A8001E;
-            transform: scale(0.98);
+            background-color: #C8102E;
+            transform: scale(0.99);
         }
     </style>
 </head>
@@ -103,13 +108,13 @@
                     <div class="poster"></div>
                     <!-- 영화 정보 영역 -->
                     <section class="movieInformation">
-                        <p class="movieTitle">영화제목</p>
+                        <p class="movieTitle">베테랑</p>
                         <ul class="listArea">
-                            <li class="informationList">일시/시간</li>
-                            <li class="informationList">상영시간</li>
-                            <li class="informationList">티켓매수</li>
-                            <li class="informationList">좌석정보</li>
-                            <li class="informationList">회원정보</li>
+                            <li class="informationList">일시/시간 &nbsp;&nbsp;&nbsp;<span class="informationDetail"  id="dateAndTime">베테랑</span></li>
+                            <li class="informationList">상영일자 &nbsp;&nbsp;&nbsp;<span class="informationDetail" id="memberInfo">2024-09-15</span></li>
+                            <li class="informationList">상영시간 &nbsp;&nbsp;&nbsp;<span class="informationDetail" id="runningTime">21:09</span></li>
+                            <li class="informationList">티켓매수 &nbsp;&nbsp;&nbsp;<span class="informationDetail" id="ticketCount">2매</span></li>
+                            <li class="informationList">좌석정보 &nbsp;&nbsp;&nbsp;<span class="informationDetail" id="seatInfo">D09, D10</span></li>
                         </ul>
                     </section>
                 </section>

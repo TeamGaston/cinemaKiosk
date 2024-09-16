@@ -16,16 +16,22 @@
     <title>user_verification_popup</title>
     <style>
         .popupContent {
-            padding-top: 6rem;
+            padding-top: 3.5rem;
         }
+
+        .popupTitleText{
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+            padding-bottom: 2.5rem;
+        }
+
         .keypadArea {
             height: 37.5rem;
         }
-        
     </style>
 
 </head>
-
 <body>
     <!-- ===최상위 컨테이너=== -->
     <div class="wrap">
@@ -34,11 +40,12 @@
             <!-- ===팝업 영역=== -->
             <section class="popupArea">
                 <article class="popupBar">
-                    <p class="popupTitle popupBarTextCommon">회원번호를 입력해주세요.</p>
+                    <p class="popupTitle popupBarTextCommon">회원번호 입력 안내</p>
                     <i class="popupBarTextCommon fa-solid fa-x"></i>
                 </article>
                 <section class="popupContent">
                     <!-- 키패드 영역 -->
+                     <h2 class="popupTitleText">회원번호를 입력해주세요</h2>
                     <section class="keypadArea">
                         <div class="phoneNumber"></div>
                         <button class="key">1</button>

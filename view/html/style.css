@@ -10,6 +10,7 @@
 
 /* ===최상위 컨테이너=== */
 .wrap {
+  position: relative;
   width: 128rem;
   height: 72rem;
   margin: 0 auto;
@@ -55,13 +56,17 @@
   padding: 0.5rem 1rem;
   border: 1px solid #323440;
   border-radius: 0.2rem;
-  /* opacity: 0.7; */
+  transition: all 0.2s;
 }
 
 .barButtons:hover {
-  background: #DE1E2D;
-  color: #df4c58;
+  background: #c52232;
+  color: #ffffff;
   box-shadow: 0 4px 8px rgba(22, 22, 22, 0.3);
+}
+
+.barButtons:hover .bottomBarIcon{
+  color: #fff;
 }
 
 .bottomBarIcon {
@@ -146,8 +151,8 @@
   padding: 2rem;
   position: relative;
   /* box-shadow: 0 10px 10px -5px rgba(60, 4, 4, 0.184); */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(8, 8, 8, 0.027);
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .popupBarTextCommon {
@@ -163,5 +168,6 @@
   0 2px 2px rgba(0,0,0,0.12), 
   0 4px 4px rgba(0,0,0,0.16), 
   0 8px 8px rgba(0,0,0,0.20);
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 

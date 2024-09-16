@@ -12,40 +12,133 @@
     <script src="https://kit.fontawesome.com/611c1b2c45.js" crossorigin="anonymous"></script>
     <!-- css -->
     <link rel="stylesheet" href="style.css">
-    <title>ticket_print_popup</title>
+    <title>ticket_print_popup_yj</title>
     <style>
         .popupContent {
             text-align: center;
-            padding-top: 4rem;
+            padding-top: 3rem;
         }
 
         .printLabel {
-            font-size: 2.4rem;
+            font-size: 2rem;
             padding-bottom: 2.5rem;
             color: #FFFFFF;
         }
 
-        .ticketImg {
-            width: 25rem;
-            height: 30rem;
+        /* 티켓영역 */
+        .ticketArea {
+            width: 26rem;
+            height: 32.5rem;
             margin: auto;
-            margin-top: 0.5rem;
-            background-color: #444444;
-            margin-bottom: 3rem;
-            color: white;
+            background-color: #e9e9e9;
+            margin-bottom: 2.5rem;
+            color: rgb(58, 58, 58);
             font-size: 1.5rem;
+            border-radius: 7px;
+            /* padding: 1.4rem; */
         }
 
-        .confirmButtonArea {
+        /* ticket > header */
+        .ticketHeader {
+            position: relative;
+            width: 100%;
+            height: 17%;
+        }
+
+        .ticketTitle {
+            padding-top: 1.5rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .ticketInfo {
+            width: 50%;
+            height: 1.9rem;
+            text-align: center;
+            line-height: 1.8rem;
+            border-radius: 1rem;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -50%);
+            background: #e03e49;
+            color: #fff;
+            font-size: 1.05rem;
+        }
+
+        /* ticket > Body */
+        .ticketBody {
+            border-radius: 0 0 7px 7px;
+            width: 100%;
+            height: 83%;
+            background: linear-gradient(#d6d6d6, #fff 3%);
+            text-align: left;
+            padding: 1rem;
+        }
+
+        /* ticketBody > content */
+        .ticketContent {
+            padding-top: 1rem;
+            width: 100%;
+            height: 70%;
+            /* border: 1px solid red; */
+        }
+
+        .ticketDetail,
+        .ticketDetailValue {
+            font-size: 1.4rem;
+        }
+
+        .ticketDetail {
+            color: #4b4b4b;
+            padding: 0.5rem;
+            border-bottom: 1.5px dotted #adadad;
+        }
+
+        .ticketDetailValue {
+            color: #000000;
+            font-weight: 500;
+        }
+
+        /* 좌석 */
+        .seatInfo {
+            width: 70%;
+            margin-top: 0.55rem;
             display: flex;
-            justify-content: center;
-            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .seatNum {
+            width: 3rem;
+            height: 2rem;
+            line-height: 2rem;
+            background: #868686;
+            text-align: center;
+            margin: 0.2rem;
+            border-radius: 0.3rem;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        /* ticketBody > footer */
+        .ticketFooter {
+            margin-top: 0.3rem;
+            padding-top: 1rem;
+            width: 100%;
+            height: 30%;
+            /* border: 1px solid green; */
+            text-align: center;
+            border-top: 1.5px dotted #adadad;
+        }
+
+        .barCode {
+            padding-top: 0.5rem;
         }
 
         /* 확인 버튼 스타일 */
         .confirmButtons {
-            width: 7rem;
             height: 3.5rem;
+            width: 11rem;
             font-size: 1.6rem;
             background-color: #DE1E2D;
             color: #ffffff;
@@ -54,50 +147,13 @@
             cursor: pointer;
             transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
 
         /* 호버 시 스타일 */
         .confirmButtons:hover {
-            background-color: #c82333;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
-            transform: translateY(-2px);
-        }
-
-        /* 클릭 시 스타일 */
-        .confirmButtons:active {
             background-color: #a71d2a;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transform: translateY(0);
-        }
-        /* 영화 관련 인풋 스타일 */
-        .aboutMovie {
-            font-size: 1.2rem;
-            background: none;
-            border: none;
-            color: white;
-            outline: none;
-            /* text-align: right; */
-            border-bottom: 1px solid white;
-            margin-top: 2rem;
-            width: 4rem;
-        }
-        /* 몇관 몇열 몇번 스타일 */
-        .movieRoom,
-        .movieSeat,
-        .movieSeatNumber {
-            width: 2rem;
-        }
-        /* 바코드 영역 */
-        .barCode {
-            margin-top: 2rem;
-            font-size: 2.3rem;
-        }
-        /* 바코드 숫자 영역 */
-        .barCodeNumber {
-            font-size: 1rem;
-            letter-spacing: 0.6rem;
-            text-align: center;
-            margin: auto;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
         }
     </style>
 </head>
@@ -110,41 +166,53 @@
             <!-- ===팝업 영역=== -->
             <section class="popupArea">
                 <article class="popupBar">
-                    <p class="popupTitle popupBarTextCommon">티켓 출력을 시작합니다.</p>
+                    <p class="popupTitle popupBarTextCommon">티켓 출력 안내</p>
                     <i class="popupBarTextCommon fa-solid fa-x"></i>
                 </article>
                 <section class="popupContent">
-                    <p class="printLabel">티켓 출력</p>
-                    <div class="ticketImg">
-                        <br>영화입장권<br>
-
-                        -----------------------------------<br>
-
-                        <div>제목 : <input type="text" class="aboutMovie movieTitle"></div>
-                        <div><input type="text" class="aboutMovie movieAge"> 세 이상관람가</div>
-                        <div>날짜:<input type="text" class="aboutMovie movieDate"></div>
-                        <div>시작시각:<input type="text" class="aboutMovie movieStartTime"> 끝나는 시각:<input type="text"
-                                class="aboutMovie movieEndTime"></div>
-                        <div><input type="text" class="aboutMovie movieRoom"> 관 <input type="text"
-                                class="aboutMovie movieSeat"> 열 <input type="text" class="aboutMovie movieSeatNumber"> 번
-                        </div>
-                        <div class="barCode">
-                            ||||||||| |||||||| |||||||| |||||||||
-                            <span id="barCodeNumber" class="barCodeNumber"></span>
-                        </div>
-                    </div>
+                    <p class="printLabel">티켓 출력을 진행해 주세요.</p>
+                    <!-- 티켓 부분 -->
+                    <section id="ticketArea" class="ticketArea">
+                        <article class="ticketHeader">
+                            <h2 class="ticketTitle">베테랑2</h2>
+                            <div class="ticketInfo">2D | 15세이상관람가</div>
+                        </article>
+                        <section class="ticketBody">
+                            <article class="ticketContent">
+                                <p class="ticketDetail">상영관 : <span class="ticketDetailValue">3관</span></p>
+                                <p class="ticketDetail">상영일 : <span class="ticketDetailValue">09.16</span></p>
+                                <p class="ticketDetail">상영시간 : <span class="ticketDetailValue">19:10 ~ 21:18</span></p>
+                                <p class="ticketDetail">좌석 : <span class="ticketDetailValue">일반 8명</span></p>
+                                <div class="seatInfo">
+                                    <div class="seatNum">A1</div>
+                                    <div class="seatNum">A2</div>
+                                    <div class="seatNum">A3</div>
+                                    <div class="seatNum">A4</div>
+                                    <div class="seatNum">B1</div>
+                                    <div class="seatNum">B2</div>
+                                    <div class="seatNum">B3</div>
+                                    <div class="seatNum">B4</div>
+                                </div>
+                            </article>
+                            <article class="ticketFooter">
+                                <p id="barCodeNumber" class="barCodeNumber"><span id="random4Num">4444</span>-<span
+                                        id="random3Num">333</span>-<span id="random5Num">5555</span></p>
+                                <canvas class="barCode" id="canvas" width="220" height="40"></canvas>
+                            </article>
+                        </section>
+                    </section>
                     <section class="confirmButtonArea">
-                        <button id="printTicketBtn" class="confirmButtons">프린트</button>
+                        <button id="printTicketBtn" class="confirmButtons">티켓 출력</button>
                     </section>
                 </section>
             </section>
             <!-- ===사이드바 영역=== -->
-            <section class="progressSidebar">
+            <!-- <section class="progressSidebar">
                 <div class="progressSettings completedStep"><span class="stepLabel">영화<br>선택</span></div>
                 <div class="progressSettings remainingStep"><span class="stepLabel">시간<br>선택</span></div>
                 <div class="progressSettings remainingStep"><span class="stepLabel">좌석<br>선택</span></div>
                 <div class="progressSettings remainingStep paymentStep"><span class="stepLabel">결제</span></div>
-            </section>
+            </section> -->
         </section>
         <!-- ===하단바 영역=== -->
         <section class="bottomBar">
@@ -160,8 +228,57 @@
         </section>
         <!-- ==script== -->
         <script>
-            const RandomCode = String((Math.random(100)));
-            document.getElementById('barCodeNumber').innerHTML = RandomCode;
+            /// 바코드 랜덤 구현 ///
+            const canvas = document.getElementById("canvas");
+            const cWidth = canvas.width;
+            const cHeight = canvas.height;
+            const pen = canvas.getContext("2d");
+
+            const modiDot = (x, y) => {
+                pen.fillRect(x, -y + cHeight, 1, 1);
+                pen.fillStyle = "#333";
+            }
+
+            let num = 0;
+            while (num < cWidth) {
+                let ramdomNum = Math.floor(Math.random() * 5) + 1;
+                let ramdomStep = Math.floor(Math.random() * 4) + 2;
+                for (let x = num; x <= (num + ramdomNum); x++) {
+                    for (let y = 0; y <= cHeight; y++) {
+                        modiDot(x, y);
+                    }
+                }
+                num += (ramdomNum + ramdomStep);
+            }
+
+            /// 바코드 랜덤 넘버 구현 ///
+
+            const randomDigitDom = {
+                random3Num: ['', [900, 100]],
+                random4Num: ['', [9000, 1000]],
+                random5Num: ['', [90000, 10000]]
+            }
+
+            const getRandomDigitNumber = ([max, min]) => {
+                return Math.floor(Math.random() * max) + min;
+            }
+
+            for (let key in randomDigitDom) {
+                if (document.getElementById(key)) {
+                    randomDigitDom[key][0] = document.getElementById(key);
+                }
+                randomDigitDom[key][0].innerText = getRandomDigitNumber([...randomDigitDom[key][1]])
+            }
+
+            /// [미완성] 티켓출력 버튼 ///
+            const printTicketBtn = document.getElementById("printTicketBtn");
+            const ticketArea = document.getElementById("ticketArea");
+                printTicketBtn.addEventListener("click", () => {
+                    // 티켓 영역 출력
+                    window.print();
+                });
+
+
         </script>
 </body>
 </div>
