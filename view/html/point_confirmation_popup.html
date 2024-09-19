@@ -17,6 +17,7 @@
     .popupContent {
         padding-top: 0rem;
     }
+
     .allOfPointArea {
         display: flex;
         height: 100%;
@@ -43,7 +44,7 @@
     /* 왼쪽 영역 글자 박스에 포인트 영역 */
     .inputTextArea {
         margin-left: 3rem;
-        margin-top:10rem;
+        margin-top: 10rem;
         border: none;
         background: none;
         border-bottom: 0.1rem solid #444444;
@@ -54,12 +55,12 @@
 
     .pointinputArea {
         border-left: 1px solid gray;
-        width: 50%; 
+        width: 50%;
     }
 
     /* 키패드 영역 */
 
-    .enterPointsLabel{
+    .enterPointsLabel {
         color: #fff;
         font-size: 1.9rem;
         margin-top: 5.5rem;
@@ -138,7 +139,7 @@
                                 <button class="key delete"><i class="fa-solid fa-delete-left"></i></button>
                                 <button class="key">0</button>
                                 <button class="key">재입력</button>
-                                <button class="check">확인</button>
+                                <button id="checkBtn" class="check">확인</button>
                             </section>
                         </section>
                     </section>
@@ -159,6 +160,12 @@
         </section>
 
     </div>
+    <script>
+        const checkBtn = document.getElementById("checkBtn");
+        checkBtn.addEventListener("click", () => {
+            window.location.href = "/buying";
+        });
+    </script>
 </body>
 
 </html>

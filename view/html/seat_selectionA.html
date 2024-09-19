@@ -60,6 +60,7 @@
         .ticketCountArea button:hover {
             background-color: #6A6A7A;
         }
+
         .ticketCountArea span {
             font-size: 2.4rem;
             margin: 0 0.5rem 0 0.5rem;
@@ -339,8 +340,8 @@
                 </div>
                 <button id="choosenSeat" class="chosenBtn">선택완료</button>
             </section>
-             <!-- ===사이드바 영역=== -->
-             <section class="progressSidebar">
+            <!-- ===사이드바 영역=== -->
+            <section class="progressSidebar">
                 <div class="progressSettings completedStep"><span class="stepLabel">영화<br>선택</span></div>
                 <div class="progressSettings completedStep"><span class="stepLabel">시간<br>선택</span></div>
                 <div class="progressSettings completedStep"><span class="stepLabel">좌석<br>선택</span></div>
@@ -363,7 +364,11 @@
     </div>
     <!-- ==script== -->
     <script>
+        const choosenSeat = document.getElementById("choosenSeat");
 
+        choosenSeat.addEventListener("click", () => {
+            window.location.href = "/payment";
+        });
     </script>
 </body>
 

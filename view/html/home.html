@@ -24,7 +24,8 @@
             margin-bottom: 2rem;
             font-size: 2.4rem;
         }
-        .keypadBoxArea{
+
+        .keypadBoxArea {
             position: relative;
             width: 50%;
             height: 100%;
@@ -88,8 +89,8 @@
         <section class="layoutArea">
             <!-- 현장예매 영역 -->
             <section class="ticketBookingArea">
-                    <div id="ticketBookingTouchArea" class="ticketBookingTouchArea"></div>
-                    <img class="ticketBookingImg" src="./images/on-site_booking.png" alt="현장예매이미지">
+                <div id="ticketBookingTouchArea" class="ticketBookingTouchArea"></div>
+                <img class="ticketBookingImg" src="./images/on-site_booking.png" alt="현장예매이미지">
             </section>
             <!-- 키패드 영역 -->
             <section class="keypadBoxArea">
@@ -129,6 +130,13 @@
         </section>
 
     </div>
+    <script>
+        const ticketBookingTouchArea = document.getElementById("ticketBookingTouchArea");
+
+        ticketBookingTouchArea.addEventListener("click", () => {
+            window.location.href = "/movie_selection";
+        });
+    </script>
 </body>
 
 </html>

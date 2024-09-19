@@ -87,13 +87,41 @@
             cursor: pointer;
         }
 
+        /* 카드 결제 */
         .cardPayment {
+            position: relative;
+            width: 100%;
+            height: 100%;
             background: #323440;
             border-right: .06rem dotted gray;
         }
 
+        .cardPaymentTouchArea {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* 포인트사용 */
         .pointsUsage {
+            position: relative;
+            width: 100%;
+            height: 100%;
             background: #323440;
+        }
+
+        .pointsUsageTouchArea {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: transparent;
+            cursor: pointer;
         }
 
         /* 결제창 > 영화포스터 */
@@ -133,11 +161,15 @@
                     <input class="paymentAmount" type="text" value="30,000원" readonly>
                 </article>
                 <article class="paymentOptionBox">
+                    <!-- 카드결제 -->
                     <div class="cardPayment paymentOptionStyle">
                         <div id="paymentCard" class="paymentImg cardImg"></div>
+                        <div id="cardPaymentTouchArea" class="cardPaymentTouchArea"></div>
                     </div>
+                    <!-- 포인트사용 -->
                     <div class="pointsUsage paymentOptionStyle">
                         <div class="paymentImg pointImg"></div>
+                        <div id="pointsUsageTouchArea" class="pointsUsageTouchArea"></div>
                     </div>
                 </article>
             </section>
@@ -156,7 +188,16 @@
         </section>
         <!-- ==script== -->
         <script>
-
+            const paymentCard = document.getElementById("cardPaymentTouchArea");
+            const pointsUsage = document.getElementById("pointsUsageTouchArea");
+            // 카드 결제
+            paymentCard.addEventListener("click", () => {
+                window.location.href = "/earn_point";
+            });
+            // 포인트 사용
+            pointsUsage.addEventListener("click", () => {
+                window.location.href = "/user_verification";
+            });
         </script>
     </div>
 </body>
