@@ -42,12 +42,13 @@
         .phoneNumber {
             width: 26.5rem;
             height: 4.5rem;
+            line-height: 4.5rem;
             margin: 0.4rem;
             font-size: 1.8rem;
             /* border: none; */
             outline: none;
             background-color: #ffffffcf;
-            color: #EDEDED;
+            color: #323440;
             border-radius: 0.5rem;
             margin-left: 2rem;
 
