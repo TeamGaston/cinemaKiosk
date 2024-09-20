@@ -10,111 +10,112 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <!-- icon -->
     <script src="https://kit.fontawesome.com/611c1b2c45.js" crossorigin="anonymous"></script>
-    <!-- css -->
+
+    <!-- 외부 CSS 파일 링크 -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="keypad.css">
-    <title>home</title>
+    <title>payment_point_accumulation_popup</title>
     <style>
-        .layoutArea {
-            display: flex;
+        /* 타이틀박스 */
+        .titleBox {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3.5rem;
+            color: #ffffff;
         }
 
-        .bookingNumberText {
-            color: white;
-            margin-bottom: 2rem;
-            font-size: 2.4rem;
-        }
-
-        .keypadBoxArea {
-            position: relative;
-            width: 50%;
-            height: 100%;
-        }
-
-        .keypadArea {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 35rem;
-            padding: 2rem;
-            height: 37.5rem;
-            align-content: center;
-            padding-left: 2.5rem;
+        .popupContent {
+            padding-top: 4rem;
             text-align: center;
         }
 
-        /* 현장예매 영역 */
-        .ticketBookingArea {
-            position: relative;
-            width: 50%;
-            height: 100%;
-            background-color: #323440db;
+        /* 확인 버튼 스타일 */
+        .nextBtn {
+            width: 12rem;
+            height: 4rem;
+            font-size: 1.6rem;
+            background-color: #3D3F4D;
+            color: #ffffff;
+            border: none;
+            border-radius: 0.5rem;
+            margin: 1rem 0 0 67rem;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .bookingNumberText{
+            font-size: 1.7rem;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+            padding-bottom: 2rem;
+        }
+        /* 호버 시 스타일 */
+        .nextBtn:hover {
+            background-color: #2C2F3A;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
         }
 
-        /* 현장예매 이미지 */
-        .ticketBookingImg {
-            position: absolute;
-            display: block;
-            width: 50%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            transition: 0.3s;
-            border-radius: 1rem;
-            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.455);
+        /* 클릭 시 스타일 */
+        .nextBtn:active {
+            background-color: #1F2026;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
         }
-
-        .ticketBookingTouchArea {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            left: 0;
-            top: 0;
-            z-index: 100;
-        }
-
-        .ticketBookingTouchArea:hover~.ticketBookingImg {
-            box-shadow: 0 0 12px 10px rgba(0, 0, 0, 0.355);
+        .keypadArea{
+            height: 40rem;
         }
     </style>
-
 </head>
+
 
 <body>
     <!-- ===최상위 컨테이너=== -->
     <div class="wrap">
         <!-- ===레이아웃 영역=== -->
         <section class="layoutArea">
-            <!-- 현장예매 영역 -->
-            <section class="ticketBookingArea">
-                <div id="ticketBookingTouchArea" class="ticketBookingTouchArea"></div>
-                <img class="ticketBookingImg" src="./images/on-site_booking.png" alt="현장예매이미지">
-            </section>
-            <!-- 키패드 영역 -->
-            <section class="keypadBoxArea">
-                <section id="keypadArea" class="keypadArea">
-                    <p class="bookingNumberText">
-                        예매 티켓 조회
-                    </p>
-                    <div id="phoneNumber" type="number" class="phoneNumber" ></div>
-                    <button class="key" data-value="1">1</button>
-                    <button class="key" data-value="2">2</button>
-                    <button class="key" data-value="3">3</button>
-                    <button class="key" data-value="4">4</button>
-                    <button class="key" data-value="5">5</button>
-                    <button class="key" data-value="6">6</button>
-                    <button class="key" data-value="7">7</button>
-                    <button class="key" data-value="8">8</button>
-                    <button class="key" data-value="9">9</button>
-                    <button class="key delete" data-value="delete"><i class="fa-solid fa-delete-left"></i></button>
-                    <button class="key" data-value="0">0</button>
-                    <button class="key" data-value="reset">재입력</button>
-                    <button id="checkBtn" class="check" data-value="check">확인</button>
+            <!-- ===사이드바 영역=== -->
+            <!-- <section class="progressSidebar">
+                <div class="progressSettings completedStep"><span class="stepLabel">영화<br>선택</span></div>
+                <div class="progressSettings remainingStep"><span class="stepLabel">시간<br>선택</span></div>
+                <div class="progressSettings remainingStep"><span class="stepLabel">좌석<br>선택</span></div>
+                <div class="progressSettings remainingStep paymentStep"><span class="stepLabel">결제</span></div>
+            </section> -->
+            <!-- ===팝업 영역=== -->
+            <section class="popupArea">
+                <article class="popupBar">
+                    <p class="popupTitle popupBarTextCommon">포인트 적립 번호 요청</p>
+                    <i class="popupBarTextCommon fa-solid fa-x"></i>
+                </article>
+                <section class="popupContent">
+
+                    <!-- 키패드 영역 -->
+                    <section class="keypadBoxArea">
+                        <section id="keypadArea" class="keypadArea">
+                            <p class="bookingNumberText">
+                                포인트를 적립할 번호를 입력해주세요.
+                            </p>
+                            <div id="phoneNumber" type="number" class="phoneNumber" ></div>
+                            <button class="key" data-value="1">1</button>
+                            <button class="key" data-value="2">2</button>
+                            <button class="key" data-value="3">3</button>
+                            <button class="key" data-value="4">4</button>
+                            <button class="key" data-value="5">5</button>
+                            <button class="key" data-value="6">6</button>
+                            <button class="key" data-value="7">7</button>
+                            <button class="key" data-value="8">8</button>
+                            <button class="key" data-value="9">9</button>
+                            <button class="key delete" data-value="delete"><i class="fa-solid fa-delete-left"></i></button>
+                            <button class="key" data-value="0">0</button>
+                            <button class="key" data-value="reset">재입력</button>
+                            <button id="earnPointBtn" class="check" data-value="check">확인</button>
+                        </section>
+                    </section>
+                    <!-- 건너뛰기 버튼 -->
+                    <button id="notEarnPointBtn" class="nextBtn">건너뛰기</button>
+
                 </section>
             </section>
-
         </section>
         <!-- ===하단바 영역=== -->
         <section class="bottomBar">
@@ -130,11 +131,17 @@
         </section>
 
     </div>
+    <!-- ==script== -->
     <script>
-        const ticketBookingTouchArea = document.getElementById("ticketBookingTouchArea");
+        const earnPointBtn = document.getElementById("earnPointBtn");
+        const notEarnPointBtn = document.getElementById("notEarnPointBtn");
 
-        ticketBookingTouchArea.addEventListener("click", () => {
-            window.location.href = "/movie_selection";
+        const buttons = [ earnPointBtn, notEarnPointBtn ];
+
+        buttons.forEach( ( button )=>{
+            button.addEventListener("click", ()=>{
+                window.location.href = "/buying";
+            });
         });
 
         class InputUserNum {
@@ -181,6 +188,7 @@
                             e.target.dataset.value != null &&
                             e.target.dataset.value != "reset" &&
                             e.target.dataset.value != "delete" &&
+                            e.target.dataset.value != "check" &&
                             InputUserNumberDeck.getLength() < 13
                         ) {
 
@@ -197,8 +205,8 @@
                             }
 
                             InputUserNumberDeck.pushItem(e.target.dataset.value);
-
                             tempString = "";
+
                             for (let i = 0; i < InputUserNumberDeck.storage.length; i++) {
                                 let tempV = "";
                                 tempV = InputUserNumberDeck.shiftItem();
@@ -216,8 +224,8 @@
                                 break;
                             case "delete":
                                 if (InputUserNumberDeck.getLength() === 10 || InputUserNumberDeck.getLength() === 5) {
-                                    // console.log(InputUserNumberDeck.storage);
-                                    // console.log(InputUserNumberDeck.getLength());
+                                    console.log(InputUserNumberDeck.storage);
+                                    console.log(InputUserNumberDeck.getLength());
                                     InputUserNumberDeck.popItem();
                                     InputUserNumberDeck.popItem();
 
@@ -243,6 +251,7 @@
                                     }
                                     this.displayData(tempString);
                                     break;
+                                    
                                 }
                                 case "check":
                                 InputUserNumberDeck.popItem();

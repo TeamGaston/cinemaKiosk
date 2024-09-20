@@ -64,7 +64,7 @@
                             <button class="key delete" data-value="delete"><i class="fa-solid fa-delete-left"></i></button>
                             <button class="key" data-value="0">0</button>
                             <button class="key" data-value="reset">재입력</button>
-                            <button id="checkBtn" class="check" disabled>확인</button>
+                            <button id="checkBtn" class="check" data-value="check">확인</button>
                         </section>
                     </section>
                 </section>
@@ -196,6 +196,11 @@
                                     this.displayData(tempString);
                                     break;
                                 }
+                                case "check":
+                                InputUserNumberDeck.popItem();
+                                let Number = String(InputUserNumberDeck.storage);
+                                let realUserNumber = (Number.replace(/-/g, '')).replace(/,/g,'');
+                                console.log(realUserNumber);
                         }
                     });
             }
