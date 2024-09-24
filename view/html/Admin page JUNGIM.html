@@ -67,23 +67,6 @@
             margin-left: 0;
         }
 
-        /* === 월 매출 날짜 표시 영역 === */
-        .month {
-            color: white;
-            margin: 2rem;
-            border-radius: 5px;
-            margin-left: 5rem;
-        }
-
-        .monthMonth {
-            font-size: 5rem;
-            font-weight: bold;
-        }
-
-        .monthYear {
-            font-size: 3rem;
-            margin-left: 0;
-        }
 
         /* === 매출 순위 날짜 표시 영역 === */
         .ranking {
@@ -232,7 +215,7 @@
 
         .rankingSalesProductCount {
             font-size: 2.5rem;
-            margin-left: 26rem;
+            margin-left: 24.8rem;
         }
 
         .rankingSalesProductHowmuch {
@@ -277,7 +260,7 @@
             width: 20rem;
         }
 
-        
+
 
         /* 맨 처음 초기 화면으로 표시를 하기 위한 설정 */
         .monthSales {
@@ -304,6 +287,7 @@
             width: 21rem;
 
         }
+
         .salesProductInfo {
             overflow: scroll;
         }
@@ -327,9 +311,6 @@
                         <div class="smallBtn dailySalesBtn" id="dailySalesBtn">
                             일 매출
                         </div>
-                        <div class="smallBtn monthlySalesBtn" id="monthlySalesBtn">
-                            월 매출
-                        </div>
                         <div class="smallBtn salesRankingBtn" id="salesRankingBtn">
                             매출 순위
                         </div>
@@ -344,152 +325,25 @@
                     <section class="sales">
                         <section class="salesAmount">
                             매출액
-                            <input type="text" class="salesInput salesAmountInput" value="70,000 원" readonly>
+                            <input type="text" id="salesAmountInput" class="salesInput salesAmountInput" readonly>
                         </section>
                         <section class="salesQuantity">
-                            판매 수량
-                            <input type="text" class="salesInput salesQuantityInput" value="10 건" readonly>
+                            총 관객수
+                            <input type="text" id="salesQuantityInput" class="salesInput salesQuantityInput" readonly>
                         </section>
                         <section class="salesProductBox">
                             <div class="salesProduct">
                                 <span class="salesProductName">영화제목</span>
-                                <span class="salesProductCount">수량</span>
+                                <span class="salesProductCount">관객수</span>
                             </div>
                             <div class="salesProductInfoBox">
-                                <div class="salesProductInfo salesProductNameInfo">
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                    <div>
-                                        <input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
+                                <div id="salesProductInfo" class="salesProductInfo salesProductNameInfo">
                                 </div>
                             </div>
                         </section>
                     </section>
                 </section>
-                <!-- === 월 매출 영역 === -->
-                <section class="monthSales" id="monthSales">
-                    <section class="dateArea">
-                        <span class="month monthMonth" id="monthMonth"></span>
-                        <span class="month monthYear" id="monthYear"></span>
-                    </section>
-                    <section class="sales">
-                        <section class="salesAmount">
-                            매출액
-                            <input type="text" class="salesInput salesAmountInput" value="130,000 원" readonly>
-                        </section>
-                        <section class="salesQuantity">
-                            판매 수량
-                            <input type="text" class="salesInput salesQuantityInput" value="100 건" readonly>
-                        </section>
-                        <section class="salesProductBox">
-                            <div class="salesProduct">
-                                <span class="salesProductName">영화제목</span>
-                                <span class="salesProductCount">수량</span>
-                            </div>
-                            <div class="salesProductInfoBox">
-                                <div class="salesProductInfo salesProductNameInfo">
-                                    <div><input type="text" value="베테랑2" readonly
-                                            class="valueOfMovies salesProductNameInput">
-                                        <input type="text" value="2" readonly
-                                            class="valueOfMovies salesProductCountInfo">
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </section>
-                </section>
+
                 <!-- ===매출 순위 === -->
                 <section class="salesRanking" id="salesRanking">
                     <section class="dateArea">
@@ -500,220 +354,10 @@
                             <div class="rankingSalesProduct">
                                 <span class="rankingSalesProductRanking">순위</span>
                                 <span class="rankingSalesProductName">영화제목</span>
-                                <span class="rankingSalesProductCount">수량</span>
+                                <span class="rankingSalesProductCount">관객수</span>
                                 <span class="rankingSalesProductHowmuch">가격</span>
                             </div>
-                            <div class="rankingSalesProductInfoBox">
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
-                                <div class="rankingSalesProductInfo">
-                                    <input type="text" value="1" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
-                                    <input type="text" value="베테랑" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
-                                    <input type="text" value="30" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
-                                    <input type="text" value="194000" readonly
-                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
-                                </div>
+                            <div id="rankingSalesProductInfoBox" class="rankingSalesProductInfoBox">
                             </div>
 
                         </section>
@@ -744,14 +388,12 @@
             constructor(id) {
                 this.id = id;
             }
-
             date() {
                 const today = new Date();
                 const year = today.getFullYear();
                 const month = today.getMonth() + 1;
                 const date = today.getDate();
                 // console.log(today);
-
                 return [year, month, date];
             }
             displayDate() {
@@ -765,44 +407,90 @@
                 document.getElementById('todayYear').innerHTML = year + "년";
                 document.getElementById('todayMonth').innerHTML = month + "월";
                 document.getElementById('todayDay').innerHTML = date + "일";
-
-                document.getElementById('monthMonth').innerHTML = month + "월";
-                document.getElementById('monthYear').innerHTML = year + "년";
-
                 document.getElementById('rankingYear').innerHTML = year + "년";
             }
         }
-
         class ChangeMode {
             constructor(id) {
                 this.id = id;
                 this.dailySalesBtn = document.getElementById('dailySalesBtn');
-                this.monthlySalesBtn = document.getElementById('monthlySalesBtn');
                 this.salesRankingBtn = document.getElementById('salesRankingBtn');
             }
             changeDisplay() {
                 this.dailySalesBtn.addEventListener('click', () => {
                     document.getElementById('todaySales').style.display = 'block';
-                    document.getElementById('monthSales').style.display = 'none';
-                    document.getElementById('salesRanking').style.display = 'none';
-                });
-                this.monthlySalesBtn.addEventListener('click', () => {
-                    document.getElementById('monthSales').style.display = 'block';
-                    document.getElementById('todaySales').style.display = 'none';
                     document.getElementById('salesRanking').style.display = 'none';
                 });
                 this.salesRankingBtn.addEventListener('click', () => {
                     document.getElementById('salesRanking').style.display = 'block';
                     document.getElementById('todaySales').style.display = 'none';
-                    document.getElementById('monthSales').style.display = 'none';
                 });
-
             }
         }
         const nowDate = new NowDate('date');
         nowDate.displayDate();
         const changeMode = new ChangeMode('changeMode');
         changeMode.changeDisplay();
+
+        class RankingSales {
+            constructor(id) {
+                this.id = id;
+            }
+            jsonHere() {
+                // json 으로 받아왔다고 생각하고 임의로 지정한 값 입니다.
+                const result = [
+                    { "title": "플립", "amount": 1000000, "audience_count": 100 },
+                    { "title": "아바타2", "amount": 2000000, "audience_count": 200 },
+                    { "title": "블라인드", "amount": 3000000, "audience_count": 300 },
+                    { "title": "나홀로 집에1", "amount": 4000000, "audience_count": 400 },
+                    { "title": "1917", "amount": 5000000, "audience_count": 500 }
+                ];
+                let movieTitle = [];
+                let movieAmount = [];
+                let movieAudienceCount = [];
+                let sumAmount = 0;
+                let sumAudienceCount=0;
+                result.forEach((v, i, a) => {
+                    movieTitle.push(v.title);
+                    movieAmount.push(v.amount);
+                    movieAudienceCount.push(v.audience_count);
+                    sumAmount += Number(movieAmount[i]);
+                    sumAudienceCount += Number(movieAudienceCount[i]);
+                    console.log(sumAmount);
+                    console.log(movieTitle, movieAmount, movieAudienceCount);
+                    document.getElementById('rankingSalesProductInfoBox').innerHTML +=
+                        `
+                <div class="rankingSalesProductInfo">
+                                    <input type="text" value="${i + 1}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
+                                    <input type="text" value="${v.title}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
+                                    <input type="text" value="${Number(v.audience_count).toLocaleString()}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
+                                    <input type="text" value="${Number(v.amount).toLocaleString()}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
+                                </div>
+                `;
+                    document.getElementById('salesProductInfo').innerHTML +=
+                        `
+                <div>
+                                        <input type="text" value="${v.title}" readonly
+                                            class="valueOfMovies salesProductNameInput">
+                                        <input type="text" value="${v.audience_count}" readonly
+                                            class="valueOfMovies salesProductCountInfo">
+                                    </div>
+                `;
+                // 일 매출 page 의 매출액과 총 관객 수 입니다.
+                document.getElementById('salesAmountInput').value=(String(sumAmount.toLocaleString())+" 원");    
+                document.getElementById('salesQuantityInput').value=(String(sumAudienceCount.toLocaleString())+" 명");
+                });
+            }
+            control() {
+                this.jsonHere();
+            }
+        }
+        const rankingSales = new RankingSales('rankingSales');
+        rankingSales.control();
     </script>
 </body>
 
