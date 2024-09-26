@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/611c1b2c45.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="keypad.css">
+    <title>sales_status</title>
+    <style>
+        .sectionHeader {
+            width: 100%;
+            height: 9%;
+            padding-top: 2rem;
+        }
+
+        .salesPageTitle {
+            color: #fff;
+            margin-left: 3rem;
+            font-size: 1.6rem;
+        }
+
+        .sectionBody {
+            display: flex;
+            width: 100%;
+            height: 91%;
+        }
+
+        .tableArea {
+            position: relative;
+            width: 60%;
+            height: 100%;
+            background-color: #011A24;
+        }
+        .graphArea{
+            position: relative;
+            width: 40%;
+            height: 100%;
+            background-color: #7eb9d0;
+        }
+        .bigLogo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 46rem;
+            height: 46rem;
+            background: url("./images/big_logo.png") no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- ===최상위 컨테이너=== -->
+    <div class="wrap">
+        <!-- ===레이아웃 영역=== -->
+        <section class="layoutArea">
+            <section class="sectionHeader">
+                <h2 class="salesPageTitle">매출 현황</h2>
+            </section>
+            <section class="sectionBody">
+                <section class="tableArea">
+                    <!-- ==조미미꺼== -->
+                </section>
+                <section class="graphArea">
+                    <!-- ==유진작성== -->
+
+                </section>
+            </section>
+        </section>
+        <!-- ===하단바 영역=== -->
+        <section class="bottomBar">
+            <article class="barButtonsArea">
+                <button class="barButtons staffCallButton">직원호출</button>
+                <button class="barButtons"><i class="bottomBarIcon fa-solid fa-house"></i></button>
+                <button class="barButtons"><i class="bottomBarIcon fa-solid fa-backward"></i></button>
+            </article>
+            <img class="logoImg" src="images/logo.png" alt="로고이미지">
+            <article class="clockArea"><i class="bottomBarIcon fa-regular fa-clock"></i><span
+                    class="timeDisplay">12:00</span>
+            </article>
+        </section>
+
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>
