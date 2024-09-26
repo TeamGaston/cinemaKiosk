@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/611c1b2c45.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Admin page</title>
+    <style>
+        /* === 상단 버튼 영역 === */
+        .btnArea {
+            display: flex;
+            border: 1px solid #ADADAD;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .smallBtn {
+            display: inline-block;
+            color: white;
+            /* background-color: #ADADAD; */
+            font-size: 3rem;
+            margin: 2rem;
+            border-radius: 5px;
+            border: 1px solid #ADADAD;
+            padding: 2rem;
+            margin: auto;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .smallBtn:hover {
+            background-color: #ababab;
+        }
+
+        /* === 날짜 표시 영역 === */
+        .dateArea {
+            display: inline-block;
+            position: relative;
+            top: 4rem;
+            left: 50%;
+            margin-left: -15rem;
+        }
+
+        /* === 일 매출 날짜 표시 영역 === */
+        .today {
+            color: white;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .todayDay {
+            font-size: 5rem;
+            font-weight: bold;
+        }
+
+        .todayMonth,
+        .todayYear {
+            font-size: 3rem;
+            margin-left: 0;
+        }
+
+
+        /* === 매출 순위 날짜 표시 영역 === */
+        .ranking {
+            color: white;
+            margin: 2rem;
+            border-radius: 5px;
+            margin-left: 5rem;
+            font-size: 5rem;
+            font-weight: bold;
+        }
+
+        /* === 왼쪽 박스 부분 === */
+        .sales {
+            position: relative;
+            top: 5rem;
+            color: white;
+            padding: 3rem;
+        }
+
+        /* === 매출액 표시 영역 === */
+        .salesAmount {
+            font-size: 3rem;
+            width: 39%;
+            height: 18rem;
+            border: #ADADAD 1px solid;
+            padding: 3rem;
+            border-radius: 5px;
+        }
+
+        /* === 판매 수량 표시 영역 === */
+        .salesQuantity {
+            border-radius: 5px;
+            padding: 3rem;
+            font-size: 3rem;
+            width: 39%;
+            height: 18rem;
+            border: #ADADAD 1px solid;
+        }
+
+        /* === 매출액 인풋 영역 === */
+        .salesInput {
+            position: relative;
+            top: 50%;
+            left: 20%;
+            width: 20rem;
+            font-size: 3rem;
+            background: none;
+            border: none;
+            color: white;
+            outline: none;
+            text-align: right;
+        }
+
+        /* === 판매 수량 인풋 영역 === */
+        .salesAmountInput {
+            margin-left: 3.5rem;
+        }
+
+        /* === 인풋박스 초기화 영역 === */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* === 오른쪽 박스 부분 === */
+        .salesProductBox {
+            position: relative;
+            border: 1px solid #ADADAD;
+            width: 55%;
+            margin-left: 43%;
+            margin-top: -29%;
+            text-align: center;
+            border-radius: 5px;
+            top: -0.7rem;
+        }
+
+        /* === 영화제목 글씨 영역 ===*/
+        .salesProductName {
+            margin-left: 15%;
+            font-size: 2.5rem;
+        }
+
+        /* === 수량 글씨 영역 === */
+        .salesProductCount {
+            margin-left: 25.5rem;
+            font-size: 2.5rem;
+        }
+
+        /* === 오른쪽 박스 영역 나누기 위해 플렉스 하는 영역 === */
+        .salesProductInfoBox {
+            display: flex;
+            height: 33rem;
+            border-top: 1px solid #ADADAD;
+        }
+
+        /* === 영화제목 차곡차곡 쌓이는 박스 영역 === */
+        .salesProductNameInfo {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 수량 차곡차곡 쌓이는 박스 영역 === */
+        /* .salesProductCountInfo {
+            width: 30%;
+            height: 100%;
+            border-left: #ADADAD 1px solid;
+        } */
+
+        /* === 영화제목과 수량의 폰트 사이즈 설정 영역 === */
+        .salesProductInfo {
+            font-size: 2rem;
+        }
+
+        /* === 매출순위 영역 === */
+        .rankingSales {
+            position: relative;
+            border: 1px solid #ADADAD;
+            width: 80%;
+            margin-top: 8rem;
+            border-radius: 5px;
+            margin-left: 13rem;
+        }
+
+        .rankingSalesProductBox {
+            height: 36rem;
+            overflow: scroll;
+        }
+
+        .rankingSalesProduct {
+            font-size: 2.5rem;
+            border-bottom: 1px solid #ababab;
+            color: white;
+        }
+
+        .rankingSalesProductRanking {
+            font-size: 2.5rem;
+            margin-left: 5rem;
+        }
+
+        .rankingSalesProductName {
+            font-size: 2.5rem;
+            margin-left: 25rem;
+            /* margin-left: 30%; */
+        }
+
+        .rankingSalesProductCount {
+            font-size: 2.5rem;
+            margin-left: 24.8rem;
+        }
+
+        .rankingSalesProductHowmuch {
+            font-size: 2.5rem;
+            margin-left: 12rem;
+        }
+
+        /* === 랭킹 순위 데이터 출력 영역 === */
+        .rankingSalesProductInfo {
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            display: flex;
+        }
+
+        .rankingSalesProductInfoValue {
+            background: none;
+            border: none;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            color: white;
+            outline: none;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-left: 0.3rem;
+            padding: 1rem;
+        }
+
+        .rankingSalesProductInputRanking {
+            width: 14rem;
+
+        }
+
+        .rankingSalesProductInputName {
+            width: 51rem;
+        }
+
+        .rankingSalesProductInputCount {
+            width: 16rem;
+        }
+
+        .rankingSalesProductInputHowmuch {
+            width: 20rem;
+        }
+
+
+
+        /* 맨 처음 초기 화면으로 표시를 하기 위한 설정 */
+
+
+        .salesRanking {
+            display: none;
+        }
+
+        .valueOfMovies {
+            background: none;
+            border: none;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            color: white;
+            outline: none;
+            font-size: 1.6rem;
+            text-align: center;
+            width: 45rem;
+            padding: 1rem;
+        }
+
+        .salesProductCountInfo {
+            width: 21rem;
+
+        }
+
+        .salesProductInfo {
+            overflow: scroll;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        /* === 그래프 영역 === */
+        .graph {
+            display: none;
+        }
+
+        .canvasArea {
+            display: inline-block;
+            margin: 1.8rem;
+            margin-top: 2rem;
+            margin-left: 8.3rem;
+            width: 50rem;
+            height: 49.5rem;
+            border: 1px solid #ababab;
+        }
+
+        .canvas {
+            width: 45rem;
+            height: 45rem;
+            margin-left: 4.9rem;
+            background-color: #ababab;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===최상위 컨테이너=== -->
+    <div class="wrap">
+        <!-- ===레이아웃 영역=== -->
+        <section class="layoutArea">
+            <!-- 최상위 버튼 영역 -->
+            <section>
+                <!-- === 일 매출 영역 === -->
+                <section>
+                    <div class="btnArea">
+                        <div class="smallBtn" id="dailySalesBtn">
+                            일 매출
+                        </div>
+                        <div class="smallBtn" id="salesRankingBtn">
+                            매출 순위
+                        </div>
+                        <div class="smallBtn" id="monthlySalesBtn">
+                            그래프
+                        </div>
+                    </div>
+                </section>
+                <section id="todaySales">
+                    <section class="dateArea">
+                        <span class="today todayDay" id="todayDay"></span>
+                        <span class="today todayYear" id="todayYear"></span>
+                        <span class="today todayMonth" id="todayMonth"></span>
+                    </section>
+                    <section class="sales">
+                        <section class="salesAmount">
+                            매출액
+                            <input type="text" id="salesAmountInput" class="salesInput salesAmountInput" readonly>
+                        </section>
+                        <section class="salesQuantity">
+                            총 관객수
+                            <input type="text" id="salesQuantityInput" class="salesInput salesQuantityInput" readonly>
+                        </section>
+                        <section class="salesProductBox">
+                            <div class="salesProduct">
+                                <span class="salesProductName">영화제목</span>
+                                <span class="salesProductCount">관객수</span>
+                            </div>
+                            <div class="salesProductInfoBox">
+                                <div id="salesProductInfo" class="salesProductInfo salesProductNameInfo">
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+
+                <!-- ===매출 순위 === -->
+                <section class="salesRanking" id="salesRanking">
+                    <section class="dateArea">
+                        <span class="ranking" id="rankingYear"></span>
+                    </section>
+                    <section class="rankingSales">
+                        <section class="rankingSalesProductBox">
+                            <div class="rankingSalesProduct">
+                                <span class="rankingSalesProductRanking">순위</span>
+                                <span class="rankingSalesProductName">영화제목</span>
+                                <span class="rankingSalesProductCount">관객수</span>
+                                <span class="rankingSalesProductHowmuch">가격</span>
+                            </div>
+                            <div id="rankingSalesProductInfoBox" class="rankingSalesProductInfoBox">
+                            </div>
+
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <!-- ===그래프 영역 === -->
+            <section class="graph" id="graph">
+                <article class="canvasArea ">
+                    <canvas id="canvasOfDay" class="canvas">
+                </article>
+                <article class="canvasArea">
+                    <canvas id="canvasOfRanking" class="canvas">
+                </article>
+
+            </section>
+        </section>
+        </section>
+        </section>
+        </section>
+
+        <!-- ===하단바 영역=== -->
+        <section class="bottomBar">
+            <article class="barButtonsArea">
+                <button class="barButtons staffCallButton">직원호출</button>
+                <button class="barButtons"><i class="bottomBarIcon fa-solid fa-house"></i></button>
+                <button class="barButtons"><i class="bottomBarIcon fa-solid fa-backward"></i></button>
+            </article>
+            <img class="logoImg" src="images/logo.png" alt="로고이미지">
+            <article class="clockArea"><i class="bottomBarIcon fa-regular fa-clock"></i><span
+                    class="timeDisplay">12:00</span>
+            </article>
+        </section>
+
+    </div>
+    <script>
+        class NowDate {
+            constructor(id) {
+                this.id = id;
+            }
+            date() {
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = today.getMonth() + 1;
+                const date = today.getDate();
+                // console.log(today);
+                return [year, month, date];
+            }
+            displayDate() {
+                const [year, month, date] = this.date();
+                // if(String(month).length == 1){
+                //     month = "0" + String(month);
+                // }
+                // if(String(date).length == 1){
+                //     date = "0" + String(date);
+                // }
+                document.getElementById('todayYear').innerHTML = year + "년";
+                document.getElementById('todayMonth').innerHTML = month + "월";
+                document.getElementById('todayDay').innerHTML = date + "일";
+                document.getElementById('rankingYear').innerHTML = year + "년";
+            }
+        }
+        class ChangeMode {
+            constructor(id) {
+                this.id = id;
+                this.dailySalesBtn = document.getElementById('dailySalesBtn');
+                this.salesRankingBtn = document.getElementById('salesRankingBtn');
+                this.monthlySalesBtn = document.getElementById('monthlySalesBtn');
+            }
+            changeDisplay() {
+                this.dailySalesBtn.addEventListener('click', () => {
+                    document.getElementById('todaySales').style.display = 'block';
+                    document.getElementById('graph').style.display = 'none';
+                    document.getElementById('salesRanking').style.display = 'none';
+                });
+                this.monthlySalesBtn.addEventListener('click', () => {
+                    document.getElementById('graph').style.display = 'block';
+                    document.getElementById('todaySales').style.display = 'none';
+                    document.getElementById('salesRanking').style.display = 'none';
+                });
+                this.salesRankingBtn.addEventListener('click', () => {
+                    document.getElementById('salesRanking').style.display = 'block';
+                    document.getElementById('todaySales').style.display = 'none';
+                    document.getElementById('graph').style.display = 'none';
+                });
+
+            }
+        }
+        const nowDate = new NowDate('date');
+        nowDate.displayDate();
+        const changeMode = new ChangeMode('changeMode');
+        changeMode.changeDisplay();
+
+        class RankingSales {
+            constructor(id) {
+                this.id = id;
+                this.result = [
+                    { "title": "플립", "amount": 1000000, "audience_count": 100 },
+                    { "title": "아바타2", "amount": 2000000, "audience_count": 200 },
+                    { "title": "블라인드", "amount": 3000000, "audience_count": 300 },
+                    { "title": "나홀로 집에1", "amount": 4000000, "audience_count": 400 },
+                    { "title": "1917", "amount": 5000000, "audience_count": 500 }
+                ];
+                this.sumAmount = 0;
+                this.sumAudienceCount = 0;
+            }
+            jsonHere() {
+                // json 으로 받아왔다고 생각하고 임의로 지정한 값 입니다.
+                let movieTitle = [];
+                let movieAmount = [];
+                let movieAudienceCount = [];
+                
+                this.result.forEach((v, i, a) => {
+                    movieTitle.push(v.title);
+                    movieAmount.push(v.amount);
+                    movieAudienceCount.push(v.audience_count);
+                    this.sumAmount += Number(movieAmount[i]);
+                    this.sumAudienceCount += Number(movieAudienceCount[i]);
+                    document.getElementById('rankingSalesProductInfoBox').innerHTML +=
+                        `
+                <div class="rankingSalesProductInfo">
+                                    <input type="text" value="${i + 1}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
+                                    <input type="text" value="${v.title}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
+                                    <input type="text" value="${Number(v.audience_count).toLocaleString()}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
+                                    <input type="text" value="${Number(v.amount).toLocaleString()}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
+                                </div>
+                `;
+                    document.getElementById('salesProductInfo').innerHTML +=
+                        `
+                <div>
+                                        <input type="text" value="${v.title}" readonly
+                                            class="valueOfMovies salesProductNameInput">
+                                        <input type="text" value="${v.audience_count}" readonly
+                                            class="valueOfMovies salesProductCountInfo">
+                                    </div>
+                `;
+                    // 일 매출 page 의 매출액과 총 관객 수 입니다.
+                    document.getElementById('salesAmountInput').value = (String(this.sumAmount.toLocaleString()) + " 원");
+                    document.getElementById('salesQuantityInput').value = (String(this.sumAudienceCount.toLocaleString()) + " 명");
+                });
+            }
+            makeCan() {
+                class MakeCanvasDay {
+                    constructor(id) {
+                        this.id = id;
+                        this.canvasOfDay = document.getElementById(`canvasOfDay`);
+                        this.penOfDay = this.canvasOfDay.getContext("2d");
+                        this.canvasWidth = this.canvasOfDay.width;
+                        this.canvasHeight = this.canvasOfDay.height;
+                        this.canvasWidthHalf = this.canvasOfDay.width / 2;
+                        this.canvasHeightHalf = this.canvasOfDay.height / 2;
+                        this.result = rankingSales.result;
+                        this.sumAudienceCount = String(rankingSales.sumAudienceCount.toLocaleString());
+                        this.sumAmount = String(rankingSales.sumAmount.toLocaleString());
+                    }
+                    drawOfDay(){
+                        const printDot = (x,y)=>{
+                            this.penOfDay.fillStyle = 'red';
+                            this.penOfDay.fillRect(x,y,1,1);
+                        }
+                        const getValue =()=>{
+                            console.log(this.result);
+                            console.log(this.sumAudienceCount);
+                            console.log(this.sumAmount);
+                        }
+                        getValue();
+                    }
+                    
+                    canvasControl(){
+                        this.drawOfDay();
+                        
+                    }
+                }
+                const makeCanvasDay = new MakeCanvasDay(`${this.id}`);
+                makeCanvasDay.canvasControl();
+
+
+                class MakeCanvasRanking {
+                    constructor(id) {
+                        this.id = id;
+                        this.canvasOfRanking =document.getElementById(`canvasOfRanking`);
+                        this.penOfRanking = this.canvasOfRanking.getContext("2d");
+                        this.canvasWidth = this.canvasOfRanking.width;
+                        this.canvasHeight = this.canvasOfRanking.height;
+                        this.canvasWidthHalf = this.canvasOfRanking.width / 2;
+                        this.canvasHeightHalf = this.canvasOfRanking.height / 2;
+                    }
+                    
+                    drawOfRanking(){
+                        const printDot = (x,y)=>{
+                            this.penOfRanking.fillStyle = 'red';
+                            this.penOfRanking.fillRect(x,y,3,3);
+                        }
+                        printDot(3,3);
+                    }
+                    canvasControl(){
+                        
+                        this.drawOfRanking();
+                    }
+                }
+                const makeCanvasRanking = new MakeCanvasRanking(`${this.id}`);
+                makeCanvasRanking.canvasControl();
+            }
+            control() {
+                this.jsonHere();
+                this.makeCan();
+            }
+        }
+        const rankingSales = new RankingSales('rankingSales');
+        rankingSales.control();
+    </script>
+</body>
+
+</html>
