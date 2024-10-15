@@ -38,24 +38,208 @@
             width: 60%;
             height: 100%;
             background-color: #011A24;
+            /* border:1px solid red; */
         }
-        .graphArea{
+
+        .graphArea {
             position: relative;
             width: 40%;
             height: 100%;
             background-color: #7eb9d0;
         }
-        .bigLogo {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 46rem;
-            height: 46rem;
-            background: url("./images/big_logo.png") no-repeat;
-            background-size: contain;
-            background-position: 50% 50%;
+
+        /* == 여기서 부터 정임이가 작성하고 있습니다. == */
+
+        /* == 날짜표시 영역 박스 == */
+        .dateArea {
+            display: inline-block;
+            position: relative;
+            width: 20rem;
+            top: 5rem;
+            left: 20rem;
+            border-radius: 5px;
+            border: 1px solid #ababab;
+            margin-left: -14rem;
+            height: 14rem;
         }
+
+        .today {
+            color: white;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .todayMonth,
+        .todayYear {
+            display: block;
+            font-size: 2rem;
+            padding: 0.5rem;
+        }
+
+        .todayMonth {
+            position: relative;
+            left: 7rem;
+            top: 0.5rem;
+        }
+
+        /* === 왼쪽 박스 부분 === */
+        .sales {
+            width: 40rem;
+            position: relative;
+            top: -10rem;
+            margin-left: 20rem;
+            color: white;
+            padding: 3rem;
+        }
+
+        /* === 매출액 인풋 영역 === */
+        .salesInput {
+            padding: 2rem;
+            width: 20rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            outline: none;
+            text-align: right;
+
+        }
+
+        /* === 판매 수량 인풋 영역 === */
+
+        .salesAmount {
+            margin-left: 5.5rem;
+            font-size: 2rem;
+            margin-top: -2rem;
+            width: 20rem;
+            height: 14rem;
+            border-radius: 5px;
+            border: 1px solid #ababab;
+        }
+
+        .salesQuantity {
+            font-size: 2rem;
+            margin-top: -14rem;
+            margin-left: 28rem;
+            width: 20rem;
+            height: 14rem;
+            border-radius: 5px;
+            border: 1px solid #ababab;
+        }
+
+        /* === 인풋박스 초기화 영역 === */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .salesAmountText,
+        .salesQuantityText {
+            display: inline-block;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+
+        /* === 매출 순위 표시 박스 === */
+        .rankingSales {
+            position: relative;
+            border: 1px solid #ADADAD;
+            width: 90%;
+            margin-top: -10rem;
+            border-radius: 5px;
+            margin-left: 3.8rem;
+        }
+
+        .rankingSalesProductBox {
+            height: 34rem;
+            overflow: scroll;
+        }
+
+        .rankingSalesProduct {
+            height: 4rem;
+            line-height: 4rem;
+            border-bottom: 1px solid #ababab;
+            color: white;
+        }
+
+        .rankingSalesProductRanking {
+            font-size: 2rem;
+            margin-left: 2rem;
+        }
+
+        .rankingSalesProductName {
+            font-size: 2rem;
+            margin-left: 10.7rem;
+            /* margin-left: 30%; */
+        }
+
+        .rankingSalesProductCount {
+            font-size: 2rem;
+            margin-left: 14.7rem;
+        }
+
+        .rankingSalesProductHowmuch {
+            font-size: 2rem;
+            margin-left: 8rem;
+        }
+
+
+        /* === 랭킹 순위 데이터 출력 영역 === */
+        .rankingSalesProductInfo {
+            height: 3rem;
+            line-height: 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        /* ===오름차순 내림차순 설정 버튼 === */
+        .upDownBtn {
+            font-size: 1.5rem;
+            /* display: none; */
+        }
+        .downUpBtn{
+            display: none;
+            font-size: 1.5rem;
+        }
+        .upDownBtn,.downUpBtn:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .rankingSalesProductInfoValue {
+            background: none;
+            border: none;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            color: white;
+            outline: none;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-left: 0.2rem;
+            height: 3rem;
+            line-height: 2rem;
+        }
+
+        .rankingSalesProductInputRanking {
+            width: 5rem;
+        }
+
+        .rankingSalesProductInputName {
+            width: 30rem;
+        }
+
+        .rankingSalesProductInputCount {
+            width: 10rem;
+        }
+
+        .rankingSalesProductInputHowmuch {
+            width: 20rem;
+        }
+        
     </style>
 
 </head>
@@ -71,6 +255,41 @@
             <section class="sectionBody">
                 <section class="tableArea">
                     <!-- ==조미미꺼== -->
+
+                    <!-- 날짜 표시 영역 -->
+                    <section class="dateArea">
+                        <span class="today todayYear" id="todayYear"></span>
+                        <span class="today todayMonth" id="todayMonth"></span>
+                        <!-- <span class="today todayDay" id="todayDay"></span> -->
+                    </section>
+                    <!-- 매출액, 총 관객 수 표시 영역-->
+                    <section class="sales">
+                        <section class="salesAmount">
+                            <span class="salesAmountText">총 매출액</span>
+                            <input type="text" id="salesAmountInput" class="salesInput salesAmountInput" readonly>
+                        </section>
+                        <section class="salesQuantity">
+                            <span class="salesQuantityText">총 관객수</span>
+                            <input type="text" id="salesQuantityInput" class="salesInput salesQuantityInput" readonly>
+                        </section>
+                    </section>
+                    <!-- 순위표 영역 -->
+                    <section class="salesRanking" id="salesRanking">
+                        <section class="rankingSales">
+                            <section class="rankingSalesProductBox">
+                                <div class="rankingSalesProduct">
+                                    <span class="rankingSalesProductRanking">순위</span>
+                                    <span id="upDownBtn" class="upDownBtn">⬆️</span>
+                                    <span id="downUpBtn" class="downUpBtn">⬇️</span>
+                                    <span class="rankingSalesProductName">영화명</span>
+                                    <span class="rankingSalesProductCount">관객수</span>
+                                    <span class="rankingSalesProductHowmuch">일별 매출 </span>
+                                </div>
+                                <div id="rankingSalesProductInfoBox" class="rankingSalesProductInfoBox">
+                                </div>
+                            </section>
+                        </section>
+                    </section>
                 </section>
                 <section class="graphArea">
                     <!-- ==유진작성== -->
@@ -93,7 +312,129 @@
 
     </div>
     <script>
+        class NowDate {
+            constructor(id) {
+                this.id = id;
+            }
+            date() {
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = today.getMonth() + 1;
+                const date = today.getDate();
+                // console.log(today);
+                return [year, month, date];
+            }
+            displayDate() {
+                const [year, month, date] = this.date();
+                document.getElementById('todayYear').innerHTML = year + "년";
+                document.getElementById('todayMonth').innerHTML = month + "월" + " " + date + "일";
+            }
+        }
+        const nowDate = new NowDate('date');
+        nowDate.displayDate();
 
+        class RankingSales {
+            constructor(id) {
+                this.id = id;
+            }
+            jsonHere() {
+                // json 으로 받아왔다고 생각하고 임의로 지정한 값 입니다.
+                const result = [
+                    { "title": "플립", "amount": 6000000, "audience_count": 600 },
+                    { "title": "아바타2", "amount": 2000000, "audience_count": 200 },
+                    { "title": "블라인드", "amount": 5000000, "audience_count": 500 },
+                    { "title": "나홀로 집에1", "amount": 4000000, "audience_count": 400 },
+                    { "title": "1917", "amount": 5000000, "audience_count": 500 }
+                ];
+                let sortResult = result.sort(function (a, b) {
+                    return b.amount - a.amount;
+                });
+                document.getElementById("upDownBtn").addEventListener('click', () => {
+                    document.getElementById("downUpBtn").style.display='inline';
+                    document.getElementById("upDownBtn").style.display='none';
+                    sortResult=[];
+                    sortResult = result.sort(function (a, b) {
+                        return a.amount - b.amount;
+                    })
+                    document.getElementById('rankingSalesProductInfoBox').innerHTML='';
+                    let movieAmount = [];
+                    let movieAudienceCount = [];
+                    let sumAmount = 0;
+                    let sumAudienceCount = 0;
+                
+                sortResult.forEach((v, i, a) => {
+                    movieAmount.push(v.amount);
+                    movieAudienceCount.push(v.audience_count);
+                    sumAmount += Number(movieAmount[i]);
+                    sumAudienceCount += Number(movieAudienceCount[i]);
+                    let ranV = (sortResult.length );
+                    document.getElementById('rankingSalesProductInfoBox').innerHTML +=
+                        `
+                <div class="rankingSalesProductInfo">
+                                    <input type="text" value="${ranV - i}" readonly id="reset1"
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
+                                    <input type="text" value="${v.title}" readonly id="reset2"
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
+                                    <input type="text" id="reset3" value="${Number(v.audience_count).toLocaleString()}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
+                                    <input type="text" id="reset4" value="${Number(v.amount).toLocaleString()}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
+                                </div>
+                `;
+                    // 상단영역의 매출액과 총 관객 수 입니다.
+                    document.getElementById('salesAmountInput').value = (String(sumAmount.toLocaleString()) + " 원");
+                    document.getElementById('salesQuantityInput').value = (String(sumAudienceCount.toLocaleString()) + " 명");
+                });
+                });
+
+                document.getElementById("downUpBtn").addEventListener('click',()=>{
+                    document.getElementById("upDownBtn").style.display='inline';
+                    document.getElementById("downUpBtn").style.display='none';
+                    document.getElementById('rankingSalesProductInfoBox').innerHTML='';
+                    sortResult=[];
+                    sortResult = result.sort(function (a, b) {
+                        return b.amount - a.amount;
+                    })
+                    rankingSales.movieRankingBtn(sortResult);
+                });
+                rankingSales.movieRankingBtn(sortResult);
+                console.log(sortResult);
+            }
+            movieRankingBtn(sortResult){
+                let movieAmount = [];
+                let movieAudienceCount = [];
+                let sumAmount = 0;
+                let sumAudienceCount = 0;
+                sortResult.forEach((v, i, a) => {
+                    movieAmount.push(v.amount);
+                    movieAudienceCount.push(v.audience_count);
+                    sumAmount += Number(movieAmount[i]);
+                    sumAudienceCount += Number(movieAudienceCount[i]);
+                    document.getElementById('rankingSalesProductInfoBox').innerHTML +=
+                        `
+                <div class="rankingSalesProductInfo">
+                                    <input type="text" value="${i + 1}" readonly id="reset1"
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputRanking">
+                                    <input type="text" value="${v.title}" readonly id="reset2"
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputName">
+                                    <input type="text" id="reset3" value="${Number(v.audience_count).toLocaleString()}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputCount">
+                                    <input type="text" id="reset4" value="${Number(v.amount).toLocaleString()}" readonly
+                                        class="rankingSalesProductInfoValue rankingSalesProductInputHowmuch">
+                                </div>
+                `;
+
+                    // 상단영역의 매출액과 총 관객 수 입니다.
+                    document.getElementById('salesAmountInput').value = (String(sumAmount.toLocaleString()) + " 원");
+                    document.getElementById('salesQuantityInput').value = (String(sumAudienceCount.toLocaleString()) + " 명");
+                });
+            }
+            control() {
+                this.jsonHere();
+            }
+        }
+        const rankingSales = new RankingSales('rankingSales');
+        rankingSales.control();
     </script>
 </body>
 
