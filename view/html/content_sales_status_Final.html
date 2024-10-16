@@ -328,7 +328,7 @@
         .graphInfo {
             position: relative;
             top: 1rem;
-            left: 34rem;
+            left: 33rem;
             width: 17em;
             height: 2rem;
             /* border: 1px solid white; */
@@ -389,7 +389,7 @@
                 <section class="graphArea">
                     <!-- 원그래프 -->
                     <article class="pieChartContainer ChartContainer">
-                        <h2 class="analyticsHeading">영화별 관객수 현황</h2>
+                        <h2 class="analyticsHeading">관객수 분포</h2>
                         <div class="chartWrapper">
                             <ul id="movieRankList" class="movieRankList"></ul>
                             <canvas id="pieChartCanvas" class="pieChartCanvas" width="220" height="220"></canvas>
@@ -411,9 +411,8 @@
                             <input type="checkbox" id="lowest" name="salesLowest" checked />
                             <label for="lowest">최저</label>
                         </div> -->
-
                         <!-- 설명서 넣는 곳 -->
-                        <div class="graphInfo">매출 분포 (단위: 10,000)</div>
+                        <div class="graphInfo">매출 분포 (단위: 10,000원)</div>
                         <canvas id="barChartCanvas" class="barChartCanvas" width="400" height="210"></canvas>
                     </article>
 
