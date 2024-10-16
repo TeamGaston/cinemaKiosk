@@ -48,16 +48,14 @@
     }
     /* 설명 이미지 */
     .informationArea{
-      /* display: inline-block; */
+      background-image: url("images/infomation.png");
+      background-repeat: no-repeat;
+      background-size:cover;
       float: right;
-      /* position: absolute; */
       position: relative;
-      top:-57rem;
-      left: -3rem;
-      width: 50rem;
-      height: 59.61rem;
-      /* background-size: cover; */
-      /* background-position: center; */
+      top:-59.6rem;
+      width: 56rem;
+      height: 59.65rem;
     }
 
     .bottomBar {
@@ -110,7 +108,7 @@
       </section>
       <!-- 설명 이미지 영역 -->
       <section class="informationArea">
-        <img src="./images/information.png">
+        <!-- <img src="images/infomation.png"> -->
       </section>
       <!-- 하단바 -->
       <section class="bottomBar">
@@ -133,7 +131,6 @@
       const minute = String(time.getMinutes()).padStart(2, "0");
       clock.innerText = `${hour}:${minute}`;
     }
-
     updateClock();
     setInterval(updateClock, 5000); // 5초마다 시간 업데이트
 
@@ -152,7 +149,6 @@
         this.videoElement.addEventListener('ended', () => this.playNextVideo());
         this.playVideo(this.currentIndex);
       }
-
       // 비디오 재생
       playVideo(index) {
         const { title, video_path } = this.data[index];
