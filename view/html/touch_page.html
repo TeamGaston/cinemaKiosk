@@ -119,6 +119,49 @@
       updateClock();
     }, 5000);
 
+    const adminModeBtn = document.getElementById("adminModeBtn");
+    adminModeBtn.addEventListener("click", () => {
+      window.location.href = "/admin_password";
+    });
+
+/////////////////////////////////////////////////////////////////////
+const dbData = [
+      { title: '플립', video_path: 'videos/플립.mp4' },
+      { title: '아바타2', video_path: 'videos/아바타2.mp4' },
+      { title: '블라인드', video_path: 'videos/블라인드.mp4' },
+      { title: '나 홀로 집에1', video_path: 'videos/나 홀로 집에1.mp4' },
+      { title: '1917', video_path: 'videos/1917.mp4' }
+    ];
+
+//////////////[sample]
+    class VideoPlayer {
+      constructor(videoElement, data) {
+        this.videoElement = videoElement;
+        this.data = data;
+        this.currentIndex = 0;
+        this.videoElement.muted = true;
+        this.videoElement.addEventListener('ended', () => this.playNextVideo());
+        this.playVideo(this.currentIndex);
+      }
+
+      playVideo(index) {
+        if (index < this.data.length) {
+          const { title, video_path } = this.data[index];
+          this.videoElement.src = video_path;
+          this.videoElement.play();
+          console.log(`Now playing: ${title}`);
+        }
+      }
+
+      playNextVideo() {
+        this.currentIndex = (this.currentIndex + 1) % this.data.length;
+        this.playVideo(this.currentIndex);
+      }
+    }
+    const videoElement = document.getElementById('myVideo');
+    const player = new VideoPlayer(videoElement, dbData);
+/////////////////////////////////////////////////////////////////////
+
   </script>
 </body>
 
