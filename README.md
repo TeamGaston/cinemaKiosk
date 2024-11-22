@@ -1,5 +1,6 @@
 # Cinema Kiosk
-
+### 문서
+  https://www.canva.com/design/DAGWih0wA4k/x-hhrT79StqNIoEXXhWYzQ/edit
 ## Project
 Cinema Kiosk는 영화관 키오스크 시스템을 웹 기반으로 구현한 프로젝트입니다. 사용자 인터페이스(UI)와 백엔드 서버를 포함하여 영화 정보 조회, 좌석 선택, 결제 등을 처리할 수 있는 애플리케이션입니다.
 
